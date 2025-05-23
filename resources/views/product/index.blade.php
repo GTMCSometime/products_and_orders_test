@@ -7,6 +7,8 @@
    <tr>
      <th>ID</th>
      <th>Название</th>
+     <th>Категория</th>
+     <th>Цена</th>
      <th colspan="3" class="text-center">Действия</th>
    </tr>
  </thead>
@@ -15,9 +17,17 @@
    <tr>
      <td>{{ $product->id}}</td>
      <td>{{ $product->name}}</td>
+     <td>{{ $product->category->name}}</td>
+     <td>{{ $product->price}}</td>
      <td><a href="{{ route('products.show', $product->id) }}"><button class="btn btn-success">Просмотр</button></td></a>
-     <td><button class="btn btn-primary">Редактировать</button></td>
-     <td><button class="btn btn-danger">Удалить</button></td>
+     <td><a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-primary">Редактировать</button></td></a>
+     <td>
+      <form action="{{ route('products.destroy', $product->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+      <button class="btn btn-danger">Удалить</button>
+      </form>
+    </td>
      @endforeach
    </tr>
  </tbody>

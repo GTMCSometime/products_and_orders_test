@@ -18,8 +18,14 @@
      <td>{{ $product->category_id}}</td>
      <td>{{ $product->description}}</td>
      <td>{{ $product->price}}</td>
-     <td><button class="btn btn-primary">Редактировать</button></td>
-     <td><button class="btn btn-danger">Удалить</button></td>
+     <td><a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-primary">Редактировать</button></td></a>
+     <td>
+      <form action="{{ route('products.destroy', $product->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+      <button class="btn btn-danger">Удалить</button>
+      </form>
+    </td>
    </tr>
  </tbody>
 </table>
