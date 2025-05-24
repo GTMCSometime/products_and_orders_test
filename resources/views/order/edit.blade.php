@@ -8,7 +8,7 @@
   <input type="text" name="customer_name" class="form-control" placeholder="ФИО" value="{{ $order->customer_name }}" required>
 </div>
 <div class="mb-2">
-<textarea name="customer_comment" class="form-control" placeholder="Описание товара" required>{{ $order->customer_comment }}</textarea>
+<textarea name="customer_comment" class="form-control" placeholder="Комментарий к заказу">{{ $order->customer_comment }}</textarea>
 </div>
 <div class="mb-2">
 <select class="form-select" name="product_id" required>
@@ -23,6 +23,9 @@
 </div>
 <div class="mb-2">
   <input type="number" name="product_count" class="form-control" placeholder="Количество" step="1" value="{{ $order->product_count }}" required>
+  @error('product_count')
+<div class="text-danger">{{ $message }}</div>
+  @enderror
 </div>
 <button type="submit" class="btn btn-success">Обновить</button>
       </form>
