@@ -1,6 +1,5 @@
 @extends('product.layouts.main')
 @section('content')
-<div><button><a href="{{ route('products.create') }}">Добавить товар</a></button></div>
        <div class="col-6">
        <table class="table">
  <thead>

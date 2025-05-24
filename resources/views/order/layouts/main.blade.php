@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="row"><h6><p align="center">Товары</p></h6></div>
-<div class="mt-2"><button class="btn btn-link"><a href="{{ route('products.create') }}">Добавить продукт</a></button></div>
-<div class="mt-2"><button class="btn btn-info"><a href="{{ route('orders.index') }}">Заказы</a></button></div>
+<div class="row"><h6><p align="center">Заказы</p></h6></div>
+<div class="mt-2"><button class="btn btn-link"><a href="{{ route('orders.create') }}">Создать заказ</a></button></div>
+<div class="mt-2"><button class="btn btn-info"><a href="{{ route('products.index') }}">Товары</a></button></div>
 <div class="mt-2">
 @yield('content')
 </div>
