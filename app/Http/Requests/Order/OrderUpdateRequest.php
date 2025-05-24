@@ -25,7 +25,14 @@ class OrderUpdateRequest extends FormRequest
             'product_id' => 'required|exists:products,id',
             'customer_name' => 'required|string',
             'customer_comment' => 'nullable|string',
-            'product_count' => 'required|numeric|min:0'
+            'product_count' => 'required|numeric|min:1'
+        ];
+    }
+
+
+    public function messages(): array {
+        return [
+            'product_count.min' => 'не может быть меньше 1!',
         ];
     }
 }
