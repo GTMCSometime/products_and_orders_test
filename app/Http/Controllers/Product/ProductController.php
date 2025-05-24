@@ -63,6 +63,6 @@ class ProductController extends ProductBaseController
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->back();
+        return redirect()->route('product.index');
     }
 }
